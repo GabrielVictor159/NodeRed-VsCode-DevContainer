@@ -1,0 +1,65 @@
+[
+    {
+        "id": "d8373918c229715f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cbfdf374a9226469",
+        "type": "http in",
+        "z": "d8373918c229715f",
+        "name": "",
+        "url": "/debug",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "704489122f041f9c"
+            ]
+        ]
+    },
+    {
+        "id": "704489122f041f9c",
+        "type": "change",
+        "z": "d8373918c229715f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"now\": $now(),\t    \"teste\": \"testando\"\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "9118cd17bb8d3547"
+            ]
+        ]
+    },
+    {
+        "id": "9118cd17bb8d3547",
+        "type": "http response",
+        "z": "d8373918c229715f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 220,
+        "wires": []
+    }
+]

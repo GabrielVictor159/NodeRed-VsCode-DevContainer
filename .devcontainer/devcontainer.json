@@ -1,0 +1,29 @@
+{
+  "name": "Basic Node.js",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/data,type=bind,consistency=cached",
+    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+  ],
+  "workspaceFolder": "/data",
+  "postStartCommand": "cd /usr/src/node-red && bash entrypoint.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        }
+      }
+    }
+  },
+  "appPort": 1880,
+  "forwardPorts": [
+    1880
+  ],
+  "remoteUser": "node-red"
+}

@@ -4,8 +4,7 @@
     "dockerfile": "Dockerfile"
   },
   "mounts": [
-    "source=${localWorkspaceFolder},target=/data,type=bind,consistency=cached",
-    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+    "source=${localWorkspaceFolder},target=/data,type=bind,consistency=cached"
   ],
   "workspaceFolder": "/data",
   "postStartCommand": "cd /usr/src/node-red && bash entrypoint.sh",

@@ -165,7 +165,7 @@ module.exports = {
      * The following property can be used to specify a different root path.
      * If set to false, this is disabled.
      */
-    //httpAdminRoot: '/admin',
+    httpAdminRoot: process.env.EDITOR_ENABLED === 'false' ? false : '/',
 
     /** The following property can be used to add a custom middleware function
      * in front of all admin http routes. For example, to set custom http
@@ -299,7 +299,7 @@ module.exports = {
              * trace - record very detailed logging + debug + info + warn + error + fatal errors
              * off - turn off all logging (doesn't affect metrics or audit)
              */
-            level: "info",
+            level: process.env.LOG_LEVEL || "info",
             /** Whether or not to include metric events in the log output */
             metrics: false,
             /** Whether or not to include audit events in the log output */
@@ -366,7 +366,7 @@ module.exports = {
      * is not affected by this option. To disable both the editor and the admin
      * API, use either the httpRoot or httpAdminRoot properties
      */
-    disableEditor: process.env.DISABLE_EDITOR,
+    disableEditor: process.env.EDITOR_ENABLED === 'false',
 
     /** Customising the editor
      * See https://nodered.org/docs/user-guide/runtime/configuration#editor-themes
@@ -377,7 +377,7 @@ module.exports = {
          * See https://github.com/node-red-contrib-themes/theme-collection for
          * a collection of themes to chose from.
          */
-        //theme: "",
+        theme: "dracula",
 
         /** To disable the 'Welcome to Node-RED' tour that is displayed the first
          * time you access the editor for each release of Node-RED, set this to false

@@ -1,16 +1,34 @@
 # Local Environment for NODERED development
 
-## Runs!
+## Dependencies
 
-Starting a VSCode - Dev Container, the Editor UI are avaiable on: `http://localhost:1880/`
+To set up a local development environment for NodeRED, ensure you have the following dependencies installed:
 
-Run a test flow request: 
+- VSCode Remote Development - https://code.visualstudio.com/docs/remote/remote-overview
+- Docker or Containerd or Podman
+- VSCode Remote Container - https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+
+## Getting Started
+
+1. Start VSCode with the Remote Development extension.
+2. Open the project in a Dev Container using VSCode Remote Containers.
+3. The NodeRED Editor UI will be accessible at: http://localhost:1880/
+
+![nodered print](img/nodered.localhost.png)
+
+
+## Test Flow
+
+Run a test flow request using the following command:
+
 ```bash
 curl http://localhost:1880/debug
-{"now":"2023-12-22T00:16:53.113Z","teste":"testando"}
+{"now":"2023-12-22T12:34:10.947Z","formated":"Friday, 22nd December MMXXIII, 12:34pm"}
 ```
  
 ## Environment Variables:
+
+Configure your environment using the following variables:
 
 | key            | default value | description             |
 | -------------- | ------------- | ----------------------- |
@@ -21,10 +39,14 @@ curl http://localhost:1880/debug
 
 ## Build a docker file 
 
-`docker build . -t <tag value>` this docker has EDITOR_ENABLED by default false, and image alpine to use in nodered runtime.
+To build a Docker image, use the following command:
+
+`docker build . -t <tag value>` 
+
+The default configuration for the Docker image has `EDITOR_ENABLED` set to false, and it uses the Minimal image for the NodeRED runtime.
 
 ### Log Level:
-Level of logging to be recorded. Options are:
+Specify the log level using one of the following options:
 * fatal - only those errors which make the application unusable should be recorded
 * error - record errors which are deemed fatal for a particular request + fatal errors
 * warn - record problems which are non fatal + errors + fatal errors

@@ -15,6 +15,7 @@ curl http://localhost:1880/debug
 | key            | default value | description             |
 | -------------- | ------------- | ----------------------- |
 | EDITOR_ENABLED | false         | Enable Editor UI        |
+| EDITOR_THEME   | default       | [theme-collection](https://github.com/node-red-contrib-themes/theme-collection/tree/screenshots)        |
 | PORT           | 1880          | Default Http Port       |
 | LOG_LEVEL      | info          | [Log Level](#log-level) |
 

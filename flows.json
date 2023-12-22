@@ -34,7 +34,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t    \"now\": $now(),\"formated\": $toMillis($now()) ~> $fromMillis('[FNn], [D1o] [MNn] [YI], [h#1]:[m01][P]') }",
+                "to": "{\t   \"now\": $now(),\t   \"formated\": $toMillis($now()) ~> $fromMillis(\t       '[FNn], [D1o] [MNn] [YI], [h#1]:[m01][P]'\t   ) \t}",
                 "tot": "jsonata"
             }
         ],

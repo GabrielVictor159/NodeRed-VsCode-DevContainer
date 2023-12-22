@@ -2,6 +2,7 @@ FROM nodered/node-red:latest-debian
 
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
+WORKDIR /usr/src/node-red/
 # install themes
 RUN npm install @node-red-contrib-themes/theme-collection
 
@@ -15,4 +16,6 @@ RUN cd ~ && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/
 RUN /bin/zsh ~/.zshrc
 
 ENV EDITOR_ENABLED=true
+ENV LOG_LEVEL=info
+ENV EDITOR_THEME=default
 

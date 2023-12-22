@@ -1,5 +1,5 @@
 {
-  "name": "Basic Node.js",
+  "name": "A Node-RED development environment",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -20,9 +20,9 @@
       }
     }
   },
+  "containerEnv": {
+    "EDITOR_THEME": "dracula"
+  },
   "appPort": 1880,
-  "forwardPorts": [
-    1880
-  ],
   "remoteUser": "node-red"
 }
